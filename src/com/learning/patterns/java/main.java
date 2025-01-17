@@ -18,7 +18,7 @@ public class main {
 		System.out.println("With the algorithm for Clowns : ");
 		scoreboardBase.scoreboardAlgorithmBase= new Clowns();
 		scoreboardBase.showScore(10,5);
-		
+
 		System.out.println("With the algorithm for SquareBallon : ");
 		scoreboardBase.scoreboardAlgorithmBase= new SquareBallon();
 		scoreboardBase.showScore(10,5);
