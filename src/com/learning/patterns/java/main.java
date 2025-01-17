@@ -1,26 +1,23 @@
 package src.com.learning.patterns.java;
 
-import src.com.learning.patterns.java.controller.ScoreboardAlgorithmBase;
-import src.com.learning.patterns.java.controller.ScoreboardBase;
-import src.com.learning.patterns.java.model.Ballon;
-import src.com.learning.patterns.java.model.Clowns;
-import src.com.learning.patterns.java.model.SquareBallon;
+import src.com.learning.patterns.java.model.CreditCardPaymentAPi;
+import src.com.learning.patterns.java.model.PaypalPaymentApi;
+import src.com.learning.patterns.java.model.Product;
+import src.com.learning.patterns.java.model.ShoppinCart;
+
+import java.util.Arrays;
 
 public class main {
 	public static void main(String[] args) {
 
-		ScoreboardBase scoreboardBase = new ScoreboardBase();
+		Product book = new Product(100, "Design Pattern in Java");
+		Product milk = new Product(5, "Soja milk");
 
-		System.out.println("With the algorithm for Ballon : ");
-		scoreboardBase.scoreboardAlgorithmBase= new Ballon();
-		scoreboardBase.showScore(10,5);
+		ShoppinCart newCard= new ShoppinCart();
+		Arrays.asList(book,milk).forEach(newCard::addProduct);
+		newCard.pay(new PaypalPaymentApi("todo@mail.com","pass"));
 
-		System.out.println("With the algorithm for Clowns : ");
-		scoreboardBase.scoreboardAlgorithmBase= new Clowns();
-		scoreboardBase.showScore(10,5);
-
-		System.out.println("With the algorithm for SquareBallon : ");
-		scoreboardBase.scoreboardAlgorithmBase= new SquareBallon();
-		scoreboardBase.showScore(10,5);
+		newCard.removeProduct(milk);
+		newCard.pay(new CreditCardPaymentAPi("Mastercard", "0123456789"));
 	}
 }
