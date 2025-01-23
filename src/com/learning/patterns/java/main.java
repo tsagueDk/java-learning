@@ -1,23 +1,20 @@
 package src.com.learning.patterns.java;
 
-import src.com.learning.patterns.java.model.CreditCardPaymentAPi;
-import src.com.learning.patterns.java.model.PaypalPaymentApi;
-import src.com.learning.patterns.java.model.Product;
-import src.com.learning.patterns.java.model.ShoppinCart;
+import src.com.learning.patterns.java.model.BasisIceCream;
+import src.com.learning.patterns.java.model.ChocolateIceCream;
+import src.com.learning.patterns.java.model.MintIceCream;
 
 import java.util.Arrays;
 
 public class main {
 	public static void main(String[] args) {
+		BasisIceCream iceCream = new BasisIceCream();
+		System.out.println("the cost for this is : "+iceCream.cost());
 
-		Product book = new Product(100, "Design Pattern in Java");
-		Product milk = new Product(5, "Soja milk");
+		MintIceCream mintIceCream = new MintIceCream(iceCream);
+		System.out.println("the cost for this is : "+mintIceCream.cost());
 
-		ShoppinCart newCard= new ShoppinCart();
-		Arrays.asList(book,milk).forEach(newCard::addProduct);
-		newCard.pay(new PaypalPaymentApi("todo@mail.com","pass"));
-
-		newCard.removeProduct(milk);
-		newCard.pay(new CreditCardPaymentAPi("Mastercard", "0123456789"));
+		ChocolateIceCream chocolateIceCream = new ChocolateIceCream(mintIceCream);
+		System.out.println("the cost for this is : "+chocolateIceCream.cost());
 	}
 }
