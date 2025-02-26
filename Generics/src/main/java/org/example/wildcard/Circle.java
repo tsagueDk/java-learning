@@ -1,4 +1,4 @@
-package org.example.control;
+package org.example.wildcard;
 
 public class Circle implements Shape {
 

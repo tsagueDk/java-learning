@@ -1,9 +1,9 @@
-package org.example.control;
+package org.example.wildcard;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestBoundedType {
+public class TestUnBoundedWildcard {
     public static void main(String[] args) {
         List<Rectangle> rectangles = new ArrayList<>();
         rectangles.add(new Rectangle());
