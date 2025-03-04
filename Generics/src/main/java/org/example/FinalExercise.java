@@ -23,7 +23,7 @@ public class FinalExercise {
 		}
 	}
 
-	class SearchAlgorithm implements Algorithm {
+	static class SearchAlgorithm implements Algorithm {
 
 		@Override
 		public void execute() {
@@ -31,7 +31,7 @@ public class FinalExercise {
 		}
 	}
 
-	class SortingAlgorithm implements Algorithm {
+	static class SortingAlgorithm implements Algorithm {
 
 		@Override
 		public void execute() {
@@ -39,7 +39,7 @@ public class FinalExercise {
 		}
 	}
 
-	class GraphAlgorithm implements Algorithm {
+	static class GraphAlgorithm implements Algorithm {
 
 		@Override
 		public void execute() {
@@ -49,7 +49,7 @@ public class FinalExercise {
 
 	static class Library<T extends Algorithm> {
 
-		private List<T> listItems;
+		private final List<T> listItems;
 
 		public Library() {
 			listItems = new ArrayList<>();
